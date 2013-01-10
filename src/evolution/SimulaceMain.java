@@ -1,10 +1,11 @@
 package evolution;
 
+import evolution.output.Output;
+
 public class SimulaceMain {
 	
 	public SimulaceMain(){
-		System.out.println("Inicializuji cas.");
-		//time ...
+		Output.printLog("Initing time");
 		
 	}
 

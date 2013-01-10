@@ -1,10 +1,12 @@
 package evolution;
 
+import evolution.output.Output;
+
 public class Main
 {
 	public static void main(String[] args) 
 	{
-		System.out.println("Inicializuji vesmir.");
+		Output.printLog("Initing universe");
 		SimulaceMain simulace = new SimulaceMain();	
 	}
 }
