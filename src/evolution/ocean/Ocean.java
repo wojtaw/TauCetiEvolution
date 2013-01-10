@@ -13,11 +13,15 @@ public class Ocean {
 	
 	private void createOcean()
 	{	
-		OceanField[] VastOceanField = new OceanField[10];
+		OceanField[][] VastOceanField = new OceanField[10][10];
 		for (int i = 0; i < 10; i++) 
 		{	
-			int tmpSunshine = generateSunshine();
-			VastOceanField[i] =  new OceanField(tmpSunshine);
+			for (int j = 0; j < 10; j++)
+			{
+				int tmpSunshine = generateSunshine();
+				VastOceanField[i][j] =  new OceanField(tmpSunshine, i+1, j+1);
+			}
+
 		}
 	}
 	
