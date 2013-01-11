@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import evolution.controllers.SimulationController;
+import evolution.output.Output;
 
 public class OceanGUI extends JFrame{
 	private JLabel[][] fieldLabels;
@@ -20,10 +21,16 @@ public class OceanGUI extends JFrame{
 			
 			fieldLabels = new JLabel[fieldWidth][fieldHeight];
 			JLabel tmpLabel;
+			float labelAlpha;
+			
 			for (int i = 0; i < fieldWidth; i++) {
 				for (int j = 0; j < fieldHeight; j++) {
-					tmpLabel = new JLabel("-"+simulation.getOcean().getFieldAt(i, j).getSunshine()+"-");
-					tmpLabel.setBackground(Color.GREEN);
+					int sunshine = simulation.getOcean().getFieldAt(i, j).getSunshine();
+					
+					labelAlpha = (float) sunshine / 100;
+					
+					tmpLabel = new JLabel("-"+sunshine+"-");
+					tmpLabel.setBackground(new Color(0.9f, 0.8f, 0.1f, labelAlpha));
 					tmpLabel.setOpaque(true);
 					this.add(tmpLabel);
 				}
