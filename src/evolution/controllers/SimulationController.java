@@ -7,9 +7,11 @@ import evolution.output.Output;
 
 public class SimulationController {
 	private BacteriaColony firstColony;
+	private Ocean vastOcean;
 	
 	public SimulationController(){
-		OceanGUI oceanGUI = new OceanGUI();
+		
+		OceanGUI oceanGUI = new OceanGUI(10,20, this);
 		
 		/*
 		Ocean tmpOcean = new Ocean(10,20);
@@ -18,6 +20,10 @@ public class SimulationController {
 		firstColony.bornBacterias(50);
 		runSimulationTime(101);
 		*/
+	}
+	
+	public Ocean getOcean(){
+		return vastOcean;
 	}
 	
 

@@ -41,5 +41,9 @@ public class Ocean {
 			System.out.print("|\n");
 		}		
 	}
+	
+	public OceanField getFieldAt(int x, int y){
+		return vastOceanField[x][y];
+	}
 
 }
