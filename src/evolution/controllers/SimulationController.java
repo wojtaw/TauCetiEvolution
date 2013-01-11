@@ -10,7 +10,7 @@ public class SimulationController {
 	private Ocean vastOcean;
 	
 	public SimulationController(){
-		
+		vastOcean = new Ocean(10,20);
 		OceanGUI oceanGUI = new OceanGUI(10,20, this);
 		
 		/*
