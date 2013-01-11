@@ -2,11 +2,12 @@ package evolution.life;
 
 import evolution.output.Output;
 
-public class Bacteria extends Organism{
+public class Bacteria extends Organism {
 	
 	public Bacteria(){
 		
 	}
+	
 	
 	@Override
 	public void nextTimeUnit() {
@@ -26,5 +27,4 @@ public class Bacteria extends Organism{
 			Output.printLog(this.name + " died");
 		}
 	}	
-	
 }

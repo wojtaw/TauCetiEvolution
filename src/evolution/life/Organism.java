@@ -24,7 +24,7 @@ public class Organism implements OrganismInterface{
 		foodSupply--;
 		if(foodSupply < 30){
 			health--;
-			Output.printLog(this.name + " is starving");
+			Output.printLog(this.name + " is flourishing");
 		}
 			
 		if(health <= 0) {

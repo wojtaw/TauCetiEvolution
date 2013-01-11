@@ -3,34 +3,43 @@ package evolution.ocean;
 import evolution.output.Output;
 
 public class Ocean {
+	private int oceanWidth;
+	private int oceanHeight;
+	private OceanField[][] vastOceanField;
 	
-	public Ocean()
+	public Ocean(int oceanWidth, int oceanHeight)
 	{	
-		Output.printLog("Initializing Ocean");
-		createOcean();
-		Output.printLog("Long live to bacterias.");
+		Output.printLog("Initializing Ocean");		
+		this.oceanWidth = oceanWidth;
+		this.oceanHeight = oceanHeight;		
+		createOceanFields();
 	}
 	
-	private void createOcean()
-	{	
-		OceanField[][] VastOceanField = new OceanField[10][10];
-		for (int i = 0; i < 10; i++) 
+	private void createOceanFields() {	
+		vastOceanField = new OceanField[oceanWidth][oceanHeight];
+		for (int i = 0; i < oceanWidth; i++) 
 		{	
-			for (int j = 0; j < 10; j++)
-			{
+			for (int j = 0; j < oceanHeight; j++) {
 				int tmpSunshine = generateSunshine();
-				VastOceanField[i][j] =  new OceanField(tmpSunshine, i+1, j+1);
+				vastOceanField[i][j] =  new OceanField(tmpSunshine, i+1, j+1);
 			}
 
 		}
 	}
 	
-	public int generateSunshine()
-	{
-	int sunshine;
-	sunshine = (int) Math.floor(Math.random()*100);
-	return sunshine;
+	public int generateSunshine() {
+		int sunshine;
+		sunshine = (int) Math.floor(Math.random()*100);
+		return sunshine;
 	}
 	
+	public void printOceanToConsole(){
+		for (int i = 0; i < oceanWidth; i++) {
+			for (int j = 0; j < oceanHeight; j++) {
+				System.out.print("|"+vastOceanField[i][j].getSunshine());
+			}
+			System.out.print("|\n");
+		}		
+	}
 
 }
