@@ -13,13 +13,13 @@ public class SimulationController {
 		vastOcean = new Ocean(10,20);
 		OceanGUI oceanGUI = new OceanGUI(10,20, this);
 		
-		/*
+		
 		Ocean tmpOcean = new Ocean(10,20);
 		tmpOcean.printOceanToConsole();
 		firstColony = new BacteriaColony();
 		firstColony.bornBacterias(50);
 		runSimulationTime(101);
-		*/
+		
 	}
 	
 	public Ocean getOcean(){
